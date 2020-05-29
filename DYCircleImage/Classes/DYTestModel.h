@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)printAge;
 
+- (void)printSchool;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

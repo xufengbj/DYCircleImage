@@ -18,4 +18,10 @@
     NSLog(@"年龄：28");
 }
 
+- (void)printSchool {
+    NSLog(@"学校：清华大学");
+}
+
+
+
 @end
