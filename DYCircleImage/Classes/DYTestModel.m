@@ -14,5 +14,8 @@
     NSLog(@"姓名：许锋");
 }
 
+- (void)printAge {
+    NSLog(@"年龄：28");
+}
 
 @end
