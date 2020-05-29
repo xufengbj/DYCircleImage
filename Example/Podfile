@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'DYCircleImage_Example' do
+  pod 'DYCircleImage', :path => '../'
+
+  target 'DYCircleImage_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
