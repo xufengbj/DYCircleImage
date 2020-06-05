@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5FA9FE082480D39900AE62EA /* DYTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9FE072480D39900AE62EA /* DYTestModel.m */; };
+		5FD728DE2489CD7B0058E6A5 /* ZYBaseUtilsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD728DD2489CD7B0058E6A5 /* ZYBaseUtilsFramework.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -41,6 +42,7 @@
 		286F5469F94A0E6183D526E9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		5FA9FE062480D39900AE62EA /* DYTestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYTestModel.h; sourceTree = "<group>"; };
 		5FA9FE072480D39900AE62EA /* DYTestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYTestModel.m; sourceTree = "<group>"; };
+		5FD728DD2489CD7B0058E6A5 /* ZYBaseUtilsFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZYBaseUtilsFramework.framework; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* DYCircleImage_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYCircleImage_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -80,6 +82,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
+				5FD728DE2489CD7B0058E6A5 /* ZYBaseUtilsFramework.framework in Frameworks */,
 				EBA482E94A9F536D299D8A05 /* Pods_DYCircleImage_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +156,7 @@
 				6003F5A6195388D20070C39A /* DYViewController.m */,
 				5FA9FE062480D39900AE62EA /* DYTestModel.h */,
 				5FA9FE072480D39900AE62EA /* DYTestModel.m */,
+				5FD728DD2489CD7B0058E6A5 /* ZYBaseUtilsFramework.framework */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -212,7 +216,7 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				51635C4F2C733463025A0708 /* [CP] Embed Pods Frameworks */,
+				6BF5130DF05E40F824B220CA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -322,7 +326,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		51635C4F2C733463025A0708 /* [CP] Embed Pods Frameworks */ = {
+		6BF5130DF05E40F824B220CA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -500,8 +504,17 @@
 			baseConfigurationReference = 72888C90A098BF7B7AFA4107 /* Pods-DYCircleImage_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DYCircleImage",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DYCircleImage/DYCircleImage-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DYCircleImage/DYCircleImage.framework/Headers\"",
+					"${PODS_ROOT}/Headers/Public",
+				);
 				INFOPLIST_FILE = "DYCircleImage/DYCircleImage-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
@@ -516,8 +529,17 @@
 			baseConfigurationReference = 74ECDDCC2794F73CE1CCB177 /* Pods-DYCircleImage_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DYCircleImage",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DYCircleImage/DYCircleImage-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DYCircleImage/DYCircleImage.framework/Headers\"",
+					"${PODS_ROOT}/Headers/Public",
+				);
 				INFOPLIST_FILE = "DYCircleImage/DYCircleImage-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";

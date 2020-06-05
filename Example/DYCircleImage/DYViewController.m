@@ -7,6 +7,7 @@
 //
 
 #import "DYViewController.h"
+#import <ZYBaseUtilsFramework/ZYLogTool.h>
 
 @interface DYViewController ()
 
@@ -18,6 +19,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [ZYLogTool printObjcName:self];
 }
 
 - (void)didReceiveMemoryWarning
